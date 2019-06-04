@@ -66,8 +66,7 @@ plugins=(
   brew 
   django 
   docker 
-  extract 
-  fzf
+  extract  
   git 
   github 
   gitfast 
