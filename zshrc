@@ -67,7 +67,7 @@ plugins=(
   django 
   docker 
   extract 
-  fasd
+  fzf
   git 
   github 
   gitfast 
