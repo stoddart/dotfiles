@@ -61,10 +61,31 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
 
-" Navigating Project Files
-Plug 'ctrlpvim/ctrlp.vim', { 'on': 'CtrlP' }
+" Navigating Project Files and Enable fzf
 Plug 'mhinz/vim-grepper'
 Plug 'Shougo/vimfiler.vim', { 'on': 'VimFiler' }
+Plug 'junegunn/fzf', { 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+    let g:fzf_layout = { "window": "silent botright 16split enew" }
+    let g:fzf_commits_log_options = '--graph --color=always
+      \ --format="%C(yellow)%h%C(red)%d%C(reset)
+      \ - %C(bold green)(%ar)%C(reset) %s %C(blue){%an}%C(reset)"'
+    nnoremap <silent> <Space><Space> :Files<CR>
+    nnoremap <silent> <Space>-       :Files <C-r>=expand("%:h")<CR>/<CR>
+    nnoremap <silent> <Space>'       :Marks<CR>
+    nnoremap <silent> <Space>,       :Buffers<CR>
+    nnoremap <silent> <Space>]       :Tags<CR>
+    nnoremap <silent> <Space>b]      :BTags<CR>
+    nnoremap <silent> <Space>c       :Commits<CR>
+    nnoremap <silent> <Space>bc      :BCommits<CR>
+    nnoremap <silent> <Space>h       :Helptags<CR>
+    nnoremap <silent> <Space>s       :Snippets<CR>
+    nnoremap          \f             :Rg<Space>
+    nnoremap <silent> \l             :Lines<CR>
+    nnoremap <silent> \bl            :BLines<CR>
+    " ~/dotfiles/vim/after/plugin/fzf.vim - customizations
+Plug 'pbogut/fzf-mru.vim'
+    nnoremap <silent> <Space>m :FZFMru<CR>
 
 " Code Editing
 if has('nvim')
