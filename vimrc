@@ -66,7 +66,7 @@ Plug 'mhinz/vim-grepper'
 Plug 'Shougo/vimfiler.vim', { 'on': 'VimFiler' }
 Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-    let g:fzf_layout = { "window": "silent botright 16split enew" }
+    let g:fzf_layout = { "window": "silent botright 16split +enew" }
     let g:fzf_commits_log_options = '--graph --color=always
       \ --format="%C(yellow)%h%C(red)%d%C(reset)
       \ - %C(bold green)(%ar)%C(reset) %s %C(blue){%an}%C(reset)"'
