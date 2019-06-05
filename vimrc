@@ -130,7 +130,7 @@ let g:indentLine_char = "⟩"
 let mapleader="\<SPACE>"
 
 " Return to last opened file
-nmap <Leader><Leader> <c-^>
+nmap <Space>z <c-^>
 
 " Adding empty lines
 nnoremap <Leader>[  :<c-u>put! =repeat(nr2char(10), v:count1)<cr>'[
@@ -159,10 +159,6 @@ nnoremap <Leader>fb :Grepper<Space>-buffers<Space>-query<Space>-<Space>
 " File Buffer
 nnoremap <Tab> :bnext!<CR>
 nnoremap <S-Tab> :bprev!<CR>
-
-" Fuzzy Finder
-nnoremap <Leader>p :CtrlP<CR>
-nnoremap <Leader>t :CtrlP<CR>
 
 " vimfiler
 map ` :VimFiler -explorer<CR>
