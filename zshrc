@@ -67,6 +67,7 @@ plugins=(
   django 
   docker 
   extract  
+  fzf
   git 
   github 
   gitfast 
@@ -114,3 +115,5 @@ source $ZSH/oh-my-zsh.sh
 
 # Load rbenv automatically
 eval "$(rbenv init -)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
