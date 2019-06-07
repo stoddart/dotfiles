@@ -36,7 +36,7 @@ ZSH_THEME="robbyrussell"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
- ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -116,4 +116,5 @@ source $ZSH/oh-my-zsh.sh
 # Load rbenv automatically
 eval "$(rbenv init -)"
 
+# Source fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
