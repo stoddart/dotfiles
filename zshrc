@@ -67,6 +67,7 @@ plugins=(
   django 
   docker 
   extract  
+  fasd
   fzf
   git 
   github 
@@ -83,7 +84,6 @@ plugins=(
   vi-mode 
   virtualenv
   vscode  
-  z
 )
 
 source $ZSH/oh-my-zsh.sh
