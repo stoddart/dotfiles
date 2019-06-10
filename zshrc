@@ -83,6 +83,7 @@ plugins=(
   vi-mode 
   virtualenv
   vscode  
+  z
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -118,3 +119,4 @@ eval "$(rbenv init -)"
 
 # Source fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH="/usr/local/sbin:$PATH"
