@@ -104,7 +104,7 @@ source $ZSH/oh-my-zsh.sh
  if [[ -n $SSH_CONNECTION ]]; then
    export EDITOR='vim'
  else
-   export EDITOR='mvim'
+   export EDITOR='nvim'
  fi
 
 # Compilation flags
@@ -123,8 +123,10 @@ source $ZSH/oh-my-zsh.sh
 eval "$(rbenv init -)"
 
 # fzf settings
-# Set fzf vi mode
-set -o vi
 # Source fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="/usr/local/sbin:$PATH"
+# Set fzf vi mode
+set -o vi
+# Bind CTRL-E to fzf search to open selection in Vim
+bindkey -s '^o' 'nvim $(fzf)\n'
