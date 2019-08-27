@@ -4,11 +4,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/daniel/.oh-my-zsh"
 
-# Set CLICOLOR for ANSI Colors in iTerm2
-export CLICOLOR=1
-# Set colors to match iTerm2 Terminal Colors
-export TERM=xterm-256color
-
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
