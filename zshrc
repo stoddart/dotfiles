@@ -125,3 +125,9 @@ export PATH="/usr/local/sbin:$PATH"
 set -o vi
 # Bind CTRL-E to fzf search to open selection in Vim
 bindkey -s '^o' 'nvim $(fzf)\n'
+
+# Make Rubies use updated Homebrew version of OpenSSL
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+
+# Make python@3.8 first in my PATH
+export PATH="/usr/local/opt/python@3.8/bin:$PATH"
