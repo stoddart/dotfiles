@@ -51,6 +51,10 @@ let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
 call plug#begin('~/.local/share/nvim/plugged')
 
+" Set Python paths for Neovim
+let g:python_host_prog = '/Users/daniel/.pyenv/versions/neovim2/bin/python'
+let g:python3_host_prog = '/Users/daniel/.pyenv/versions/neovim3/bin/python'
+
 " Required
 Plug 'Shougo/unite.vim'
 
