@@ -1,0 +1,16 @@
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[user]
+	name = Daniel Stoddart
+	email = stoddart@gmail.com
+[color]
+	ui = true
+[credential]
+	helper = store
+[core]
+	sshCommand = ssh -i ~/.ssh/id_rsa -F /dev/null
+[init]
+	defaultBranch = main
