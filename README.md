@@ -1,2 +1,2 @@
 # dotfiles
-A repo for my dotfiles.
+A repo for my dotfiles, version controlled by chezmoi.
