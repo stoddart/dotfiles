@@ -1,0 +1,25 @@
+# ~/.curlrc
+
+# Follow HTTP redirects
+location
+
+# Retry on transient errors, with a limit of 5 retries
+retry = 5
+retry-delay = 5
+
+# Silence progress meter for non-interactive use (like in scripts)
+silent
+
+# Output the response to a file if no file is specified
+output = "curl_output.txt"
+
+# Timeout settings: 30 seconds to connect, 60 seconds overall
+connect-timeout = 30
+max-time = 60
+
+# Fail on HTTP errors (e.g. 404 or 500)
+fail
+
+# Automatically resume downloads if interrupted
+continue-at = "-"
+

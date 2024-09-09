@@ -1,0 +1,25 @@
+# ~/.wgetrc
+
+# Retry up to 10 times for failed connections
+tries = 10
+retry_connrefused = on
+
+# Automatically continue partially downloaded files
+continue = on
+
+# Set a timeout of 30 seconds for connecting to a server
+timeout = 30
+
+# Recursively download websites up to a depth of 2 levels
+recursive = on
+level = 2
+
+# Convert links to make downloaded websites viewable offline
+convert-links = on
+
+# Avoid downloading files from outside the original website
+domains = example.com
+
+# Use passive FTP (better for some firewalls and NAT setups)
+passive_ftp = on
+
