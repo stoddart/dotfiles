@@ -11,7 +11,7 @@ retry-delay = 5
 silent
 
 # Output the response to a file if no file is specified
-output = "curl_output.txt"
+# output = "curl_output.txt"
 
 # Timeout settings: 30 seconds to connect, 60 seconds overall
 connect-timeout = 30
