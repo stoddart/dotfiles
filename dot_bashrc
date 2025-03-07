@@ -1,3 +1,55 @@
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+# History settings
+HISTSIZE=10000
+HISTFILESIZE=20000
+HISTCONTROL=ignoreboth:erasedups
+shopt -s histappend
+
+# Better directory navigation
+shopt -s autocd
+shopt -s cdspell
+shopt -s dirspell
+
+# Better line editing
+bind "set completion-ignore-case on"
+bind "set show-all-if-ambiguous on"
+bind "set mark-symlinked-directories on"
+
+# Colors and formatting
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
+alias ls='ls -GFh'
+alias ll='ls -la'
+alias la='ls -A'
+
+# Useful aliases
+alias ..='cd ..'
+alias ...='cd ../..'
+alias mkdir='mkdir -p'
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+
+# Set default editor
+export EDITOR='nvim'
+export VISUAL='nvim'
+alias vim='nvim'
+
+# Enable programmable completion
+if [ -f /usr/local/etc/bash_completion ]; then
+    . /usr/local/etc/bash_completion
+elif [ -f /opt/homebrew/etc/bash_completion ]; then
+    . /opt/homebrew/etc/bash_completion
+fi
+
+# Load fzf if installed
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# Set PATH to include Homebrew
+if [ -d "/opt/homebrew/bin" ]; then
+    export PATH="/opt/homebrew/bin:$PATH"
+fi
 
 source /Users/daniel/.config/broot/launcher/bash/br

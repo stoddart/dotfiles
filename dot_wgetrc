@@ -12,7 +12,6 @@ timeout = 30
 
 # Recursively download websites up to a depth of 2 levels
 recursive = on
-level = 2
 
 # Convert links to make downloaded websites viewable offline
 convert-links = on
