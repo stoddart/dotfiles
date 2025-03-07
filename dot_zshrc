@@ -89,7 +89,6 @@ plugins=(
   npm
   pip
   python
-  ripgrep
   tmux
   vi-mode
   vscode
