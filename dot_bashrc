@@ -24,9 +24,9 @@ export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
 # Essential aliases
-alias ls='ls -GFh'
-alias ll='ls -la'
-alias la='ls -A'
+alias ls='ls -G'
+alias ll='ls -lh'
+alias la='ls -lAh'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias mkdir='mkdir -p'
