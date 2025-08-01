@@ -9,7 +9,7 @@
 [color]
 	ui = true
 [credential]
-	helper = store
+	helper = osxkeychain
 [core]
 	sshCommand = ssh -i ~/.ssh/id_rsa -F /dev/null
 [init]

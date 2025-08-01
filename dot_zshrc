@@ -95,7 +95,6 @@ plugins=(
   git
   github
   gitfast
-  iterm2
   macos
   nmap
   node
@@ -176,20 +175,6 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export PATH=$(echo $PATH | awk -v RS=: -v ORS=: '!seen[$0]++')
 alias bash="/opt/homebrew/bin/bash"
 
-# Shell Options
-setopt AUTO_CD              # Change directory without cd
-setopt AUTO_PUSHD          # Push the current directory visited on the stack
-setopt PUSHD_IGNORE_DUPS   # Do not store duplicates in the stack
-setopt PUSHD_SILENT        # Do not print directory stack after pushd or popd
-setopt EXTENDED_HISTORY    # Record timestamp of command in HISTFILE
-setopt HIST_IGNORE_DUPS    # Do not record if command is same as previous command
-setopt HIST_IGNORE_SPACE   # Do not record commands starting with space
-setopt HIST_VERIFY        # Show command with history expansion before running it
-setopt SHARE_HISTORY      # Share history between different shells
-setopt HIST_REDUCE_BLANKS # Remove unnecessary blanks
-setopt HIST_EXPIRE_DUPS_FIRST    # Delete duplicates first when HISTFILE size exceeds HISTSIZE
-setopt INC_APPEND_HISTORY        # Write to the history file immediately
-
 # Aliases
 # Note: Many aliases are already provided by Oh My Zsh plugins
 # See: https://github.com/ohmyzsh/ohmyzsh/wiki/Cheatsheet
@@ -228,3 +213,6 @@ export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 
 # Enable fast-syntax-highlighting
 source /opt/homebrew/opt/zsh-fast-syntax-highlighting/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+
+# Enable broot with the shell
+source /Users/daniel/.config/broot/launcher/bash/br
