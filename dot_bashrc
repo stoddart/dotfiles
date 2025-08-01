@@ -40,5 +40,5 @@ if [ -d "/opt/homebrew/bin" ]; then
   export PATH="/opt/homebrew/bin:$PATH"
 fi
 
-# Source broot to launch
+# Enable broot with the shell
 source /Users/daniel/.config/broot/launcher/bash/br
