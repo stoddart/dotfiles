@@ -37,7 +37,8 @@ alias vim='nvim'
 
 # Set PATH to include Homebrew (if exists)
 if [ -d "/opt/homebrew/bin" ]; then
-    export PATH="/opt/homebrew/bin:$PATH"
+  export PATH="/opt/homebrew/bin:$PATH"
 fi
 
+# Source broot to launch
 source /Users/daniel/.config/broot/launcher/bash/br
