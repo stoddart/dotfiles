@@ -104,7 +104,6 @@ plugins=(
   tmux
   vi-mode
   vscode
-  z
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -216,3 +215,6 @@ source /opt/homebrew/opt/zsh-fast-syntax-highlighting/share/zsh-fast-syntax-high
 
 # Enable broot with the shell
 source /Users/daniel/.config/broot/launcher/bash/br
+
+# Initialize zoxide
+eval "$(zoxide init zsh)"
