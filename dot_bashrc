@@ -42,3 +42,6 @@ fi
 
 # Enable broot with the shell
 source /Users/daniel/.config/broot/launcher/bash/br
+
+# shellcheck source=/dev/null
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
