@@ -45,3 +45,6 @@ source /Users/daniel/.config/broot/launcher/bash/br
 
 # shellcheck source=/dev/null
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# Unset HISTTIMEFORMAT to prevent it from showing in regular history search
+export HISTTIMEFORMAT=""
