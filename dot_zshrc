@@ -258,3 +258,4 @@ chezmoi-update() {
         echo "✅ No changes detected. Nothing to commit."
     fi
 }
+# Test change for chezmoi-update
