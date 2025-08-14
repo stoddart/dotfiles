@@ -1,13 +1,7 @@
 # Setup fzf
 # ---------
-if [[ ! "$PATH" == */Users/daniel/.fzf/bin* ]]; then
-  PATH="${PATH:+${PATH}:}/Users/daniel/.fzf/bin"
+if [[ ! "$PATH" == */opt/homebrew/opt/fzf/bin* ]]; then
+  PATH="${PATH:+${PATH}:}/opt/homebrew/opt/fzf/bin"
 fi
 
-# Auto-completion
-# ---------------
-[[ $- == *i* ]] && source "/Users/daniel/.fzf/shell/completion.zsh" 2> /dev/null
-
-# Key bindings
-# ------------
-source "/Users/daniel/.fzf/shell/key-bindings.zsh"
+source <(fzf --zsh)

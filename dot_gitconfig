@@ -4,12 +4,10 @@
 	process = git-lfs filter-process
 	required = true
 [user]
-	name = Daniel Stoddart
+	name = stoddart
 	email = stoddart@gmail.com
 [color]
 	ui = true
-[credential]
-	helper = osxkeychain
 [core]
 	sshCommand = ssh -i ~/.ssh/id_rsa -F /dev/null
 [init]
