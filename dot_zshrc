@@ -218,3 +218,43 @@ source /Users/daniel/.config/broot/launcher/bash/br
 
 # Initialize zoxide
 eval "$(zoxide init zsh)"
+
+# ----------------------------------------------------------
+# chezmoi-update function
+#
+# Purpose:
+#   Automates my chezmoi workflow for keeping dotfiles in sync.
+#   - Shows a colorized diff of changes to dotfiles
+#   - Prompts for confirmation before committing & pushing
+#   - Skips commit/push if there are no changes
+#
+# Usage:
+#   Run `chezmoi-update` in the terminal to review and sync.
+#
+# Notes:
+#   This assumes chezmoi is configured with a GitHub remote.
+#   The `chezmoi add --recursive ~` step updates chezmoi's source
+#   state with all changed files it tracks.
+# ----------------------------------------------------------
+chezmoi-update() {
+    echo "=== Checking for changes in your dotfiles ==="
+    if chezmoi diff | grep -q .; then
+        echo "=== Showing colorized diff ==="
+        chezmoi diff | diff-so-fancy || chezmoi diff
+        echo
+        read -p "Commit and push these changes to GitHub? (y/N) " confirm
+        if [[ "$confirm" =~ ^[Yy]$ ]]; then
+            echo "=== Adding all changed files to chezmoi's source state ==="
+            chezmoi add --recursive ~
+            echo "=== Committing changes ==="
+            chezmoi git commit -- -m "Update dotfiles"
+            echo "=== Pushing to GitHub ==="
+            chezmoi git push
+            echo "✅ Dotfiles updated and pushed."
+        else
+            echo "❌ Cancelled."
+        fi
+    else
+        echo "✅ No changes detected. Nothing to commit."
+    fi
+}
