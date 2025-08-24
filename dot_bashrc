@@ -1,30 +1,45 @@
-# ~/.bashrc - for interactive bash only
+# ~/.bashrc
 
-# Exit if not running interactively
-[[ $- != *i* ]] && return
-
-# Enable bash options
-shopt -s checkwinsize # Update LINES and COLUMNS
-shopt -s histappend   # Append to history
-shopt -s cmdhist      # Multi-line commands as single history entry
-
-# History control
-HISTCONTROL=ignoredups:erasedups
+# ---- General Settings ----
+# Better history behavior
 HISTSIZE=10000
 HISTFILESIZE=20000
+HISTCONTROL=ignoredups:erasedups
+shopt -s histappend
+PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
-# Keybindings
-bind 'set completion-ignore-case on'
-bind 'set show-all-if-ambiguous on'
-
-# Prompt
-PS1='\u@\h:\w\$ '
-
-# Source extra bash-only configs if present
-if [[ -f ~/.bash_aliases ]]; then
-  source ~/.bash_aliases
+# Colored prompt
+if [ -t 1 ]; then
+  PS1="\[\e[0;32m\]\u@\h \[\e[0;34m\]\w\[\e[0m\] $ "
 fi
 
-# ~/.bashrc
-# Prompt: $bash<major>.<minor>.<patch>
-PS1='\$\s'"${BASH_VERSINFO[0]}.${BASH_VERSINFO[1]}.${BASH_VERSINFO[2]} "
+# Enable ls colors and aliases
+alias ls='ls --color=auto'
+alias ll='ls -lh'
+alias la='ls -A'
+alias l='ls -CF'
+
+# ---- Homebrew PATH ----
+if [[ -d /opt/homebrew/bin ]]; then
+  export PATH="/opt/homebrew/bin:$PATH"
+fi
+
+# ---- Git Shortcuts ----
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push'
+alias gl='git pull'
+
+# ---- fzf Integration ----
+# Enable fuzzy history search with Ctrl-R and other bindings
+if [[ -f /opt/homebrew/opt/fzf/shell/key-bindings.bash ]]; then
+  source /opt/homebrew/opt/fzf/shell/key-bindings.bash
+fi
+
+if [[ -f /opt/homebrew/opt/fzf/shell/completion.bash ]]; then
+  source /opt/homebrew/opt/fzf/shell/completion.bash
+fi
+
+# ---- Extra Customizations ----
+# (Add your own aliases, exports, or functions below)
