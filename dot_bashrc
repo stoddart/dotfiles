@@ -1,49 +1,30 @@
+# ~/.bashrc - for interactive bash only
+
+# Exit if not running interactively
 [[ $- != *i* ]] && return
 
-# History settings
+# Enable bash options
+shopt -s checkwinsize # Update LINES and COLUMNS
+shopt -s histappend   # Append to history
+shopt -s cmdhist      # Multi-line commands as single history entry
+
+# History control
+HISTCONTROL=ignoredups:erasedups
 HISTSIZE=10000
 HISTFILESIZE=20000
-HISTCONTROL=ignoreboth:erasedups
-shopt -s histappend
 
-# Better directory navigation (bash-specific)
-shopt -s autocd
-shopt -s cdspell
-shopt -s dirspell
+# Keybindings
+bind 'set completion-ignore-case on'
+bind 'set show-all-if-ambiguous on'
 
-# Better line editing (bash-specific)
-bind "set completion-ignore-case on"
-bind "set show-all-if-ambiguous on"
-bind "set mark-symlinked-directories on"
+# Prompt
+PS1='\u@\h:\w\$ '
 
-# Basic environment settings
-export EDITOR='nvim'
-export VISUAL='nvim'
-export CLICOLOR=1
-export LSCOLORS=GxFxCxDxBxegedabagaced
-
-# Essential aliases
-alias ls='ls -G'
-alias ll='ls -lh'
-alias la='ls -lAh'
-alias ..='cd ..'
-alias ...='cd ../..'
-alias mkdir='mkdir -p'
-alias cp='cp -i'
-alias mv='mv -i'
-alias rm='rm -i'
-alias vim='nvim'
-
-# Set PATH to include Homebrew (if exists)
-if [ -d "/opt/homebrew/bin" ]; then
-  export PATH="/opt/homebrew/bin:$PATH"
+# Source extra bash-only configs if present
+if [[ -f ~/.bash_aliases ]]; then
+  source ~/.bash_aliases
 fi
 
-# Enable broot with the shell
-source /Users/daniel/.config/broot/launcher/bash/br
-
-# shellcheck source=/dev/null
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-# Unset HISTTIMEFORMAT to prevent it from showing in regular history search
-export HISTTIMEFORMAT=""
+# ~/.bashrc
+# Prompt: $bash<major>.<minor>.<patch>
+PS1='\$\s'"${BASH_VERSINFO[0]}.${BASH_VERSINFO[1]}.${BASH_VERSINFO[2]} "
